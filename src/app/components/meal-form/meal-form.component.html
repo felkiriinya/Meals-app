@@ -1,0 +1,41 @@
+<div class="card">
+    <div class="card-body">
+        <blockquote class="blockquote mb-0">
+            <form (ngSubmit)="submittingMeal();  mealForm.resetForm({}) " #mealForm=ngForm>
+                <div class="form-group">
+                    <label for="meal">Meal:</label>
+                    <input type="text"
+                    placeholder="Name of meal..."
+                    name="meal"
+                    id="meal"
+                    #meal="ngModel"
+                    [(ngModel)]="newMeal.meal"
+                    required>
+                </div>
+                <div class="form-group">
+                    <label for="calories">Calories:</label>
+                    <input type="number"
+                    placeholder="Calories..."
+                    name="calories"
+                    id="calories"
+                    #calories="ngModel"
+                    [(ngModel)]="newMeal.calories"
+                    required>
+                </div>
+                <div class="form-group">
+                    <label for="details">Details:</label>
+                    <textarea name="details" id="details" cols="30" 
+                    placeholder="Details of meal..."
+                    
+                    #details="ngModel"
+                    [(ngModel)]="newMeal.details"
+                    required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" >Add Your Meal</button>
+            </form>
+
+        </blockquote>
+
+    </div>
+
+</div>

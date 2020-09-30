@@ -1,0 +1,56 @@
+<div class="container-fluid">
+    <div class="header">
+        <h1 class="text-center">
+            Meal-Tracker App
+        </h1>
+
+    </div>
+    <div class="row">
+        <div class="col-sm-8">
+            <div >
+                <h5 class="text-center" >MEALS AND THEIR CALORIES</h5>
+            </div>
+            <hr style="width:50%">
+            <div class="cards">
+                <div class="card" *ngFor="let meal of meals; let i=index">
+                    <div class="card-body">
+                        <blockquote class="blockquote mb-0 ">
+                            <p>Name: <strong>{{meal.meal|uppercase}}</strong></p>
+                            <p>Calories: {{meal.calories}}</p>
+                            <p>Details: {{meal.details}}</p>
+                        </blockquote>
+                        <app-edit [meals]="meals" (editMeal)="mealEdit($event)"></app-edit>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+        <div class="col-sm-4 right">
+            <div>
+                <h5 class="text-center" >FILTER MEALS ACCORDING TO CALORIES</h5>
+            </div>
+            
+                    <hr style="width:50%">
+             <div>
+                <app-meal-details></app-meal-details>
+             </div>
+            
+            <div>
+                <h5 class="text-center" >ADD YOUR MEAL</h5>
+            </div>
+            <hr style="width:50%">
+        
+            <div>
+                    <app-meal-form (addMeal)="addNewMeal($event)"></app-meal-form>
+            </div>
+                
+            
+
+        </div>
+
+    </div>
+
+</div>
